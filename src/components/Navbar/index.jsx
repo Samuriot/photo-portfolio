@@ -1,6 +1,6 @@
 import { Link, NavLink } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHome, faImages, faUser, faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faHome, faImages, faUser } from '@fortawesome/free-solid-svg-icons'
 import { faInstagram, faGithub } from '@fortawesome/free-brands-svg-icons'
 import './index.scss'
 
@@ -8,7 +8,6 @@ const links = [
   { to: '/', icon: faHome, label: 'Home', end: true },
   { to: '/gallery', icon: faImages, label: 'Gallery' },
   { to: '/about', icon: faUser, label: 'About' },
-  { to: '/contact', icon: faEnvelope, label: 'Contact' },
 ]
 
 // Swap these for your photography socials

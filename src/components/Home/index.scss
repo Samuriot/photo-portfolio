@@ -55,6 +55,23 @@
     gap: 12px;
   }
 
+  .contact-line {
+    margin: 18px 0 0;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+
+    a {
+      color: var(--color-accent-strong);
+      text-decoration: none;
+      border-bottom: 1px solid var(--tint-border-accent);
+
+      &:hover {
+        border-bottom-color: var(--color-accent);
+      }
+    }
+  }
+
   .featured-panel {
     padding: 14px;
     transform: rotate(1.5deg);

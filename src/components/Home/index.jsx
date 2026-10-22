@@ -6,6 +6,9 @@ import PhotoFrame from '../Gallery/PhotoFrame'
 import usePhotos from '../../lib/usePhotos'
 import './index.scss'
 
+const emailAddress = 'jomi.g.ruiz@gmail.com'
+const instagramUrl = 'https://www.instagram.com/pics.by.jomi/'
+
 // Gradient placeholder until the bucket responds
 const placeholder = { title: 'Golden hour', subtitle: '' }
 
@@ -35,8 +38,12 @@ const Home = () => {
             </p>
             <div className="actions">
               <Link to="/gallery" className="flat-button">VIEW GALLERY</Link>
-              <Link to="/contact" className="flat-button secondary">SAY HELLO</Link>
+              <a href={`mailto:${emailAddress}`} className="flat-button secondary">SAY HELLO</a>
             </div>
+            <p className="contact-line">
+              Want to shoot together or book portraits? DM{' '}
+              <a href={instagramUrl} target="_blank" rel="noreferrer">@pics.by.jomi</a>.
+            </p>
           </div>
 
           <aside className="featured-panel panel">
