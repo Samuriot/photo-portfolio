@@ -38,7 +38,6 @@ const Home = () => {
             </p>
             <div className="actions">
               <Link to="/gallery" className="flat-button">VIEW GALLERY</Link>
-              <a href={`mailto:${emailAddress}`} className="flat-button secondary">SAY HELLO</a>
             </div>
             <p className="contact-line">
               Want to shoot together or book portraits? DM{' '}
