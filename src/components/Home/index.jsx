@@ -24,17 +24,14 @@ const Home = () => {
       <div className="container home-page">
         <div className="home-content">
           <div className="intro-block">
-            <p className="kicker">Photography · Hobbyist</p>
+            <p className="kicker">Photos In My Free Time</p>
             <h1>
-              <AnimatedLetters letterClass={letterClass} strArray={'Chasing'.split('')} idx={10} />
-              <br />
               <span className="sunset-text">
-                <AnimatedLetters letterClass={letterClass} strArray={'golden hour'.split('')} idx={17} />
+                <AnimatedLetters letterClass={letterClass} strArray={'pics.by.jomi'.split('')} idx={17} />
               </span>
             </h1>
             <p className="summary">
-              A collection of moments I&apos;ve caught along the way — warm light, quiet streets,
-              and the people and places that make them worth stopping for.
+              A memoir to all my experiences, memories, and trips, captured through the lens of my camera.
             </p>
             <div className="actions">
               <Link to="/gallery" className="flat-button">VIEW GALLERY</Link>
