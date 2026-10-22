@@ -1,0 +1,61 @@
+import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import Loader from 'react-loaders'
+import AnimatedLetters from '../AnimatedLetters'
+import PhotoFrame from '../Gallery/PhotoFrame'
+import usePhotos from '../../lib/usePhotos'
+import './index.scss'
+
+// Gradient placeholder until the bucket responds
+const placeholder = { title: 'Golden hour', subtitle: '' }
+
+const Home = () => {
+  const { photos } = usePhotos()
+  const featured = photos[0] || placeholder
+  const [letterClass, setLetterClass] = useState('text-animate')
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLetterClass('text-animate-hover'), 2500)
+    return () => clearTimeout(timer)
+  }, [])
+
+  return (
+    <>
+      <div className="container home-page">
+        <div className="home-content">
+          <div className="intro-block">
+            <p className="kicker">Photography · Hobbyist</p>
+            <h1>
+              <AnimatedLetters letterClass={letterClass} strArray={'Chasing'.split('')} idx={10} />
+              <br />
+              <span className="sunset-text">
+                <AnimatedLetters letterClass={letterClass} strArray={'golden hour'.split('')} idx={17} />
+              </span>
+            </h1>
+            <p className="summary">
+              A collection of moments I&apos;ve caught along the way — warm light, quiet streets,
+              and the people and places that make them worth stopping for.
+            </p>
+            <div className="actions">
+              <Link to="/gallery" className="flat-button">VIEW GALLERY</Link>
+              <Link to="/contact" className="flat-button secondary">SAY HELLO</Link>
+            </div>
+          </div>
+
+          <aside className="featured-panel panel">
+              <div className="featured-image">
+                <PhotoFrame photo={featured} index={0} />
+              </div>
+              <div className="featured-meta">
+                <span className="featured-title">{featured.title}</span>
+                <span className="featured-location">{featured.subtitle}</span>
+              </div>
+            </aside>
+        </div>
+      </div>
+      <Loader type="pacman" />
+    </>
+  )
+}
+
+export default Home

@@ -1,0 +1,79 @@
+.contact-page {
+  padding: 32px 36px;
+  min-height: calc(100dvh - 180px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-content {
+  width: 100%;
+  max-width: 760px;
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+
+  // Thin sunset stripe across the top of the card
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-sunset);
+  }
+
+  h1 {
+    margin: 0;
+    font-size: clamp(4.2rem, 6.2vw, 7rem);
+    line-height: 1.04;
+    font-family: var(--font-heading);
+    color: var(--color-text);
+    font-weight: 700;
+  }
+
+  p {
+    margin: 14px 0 0;
+    color: var(--color-text-body);
+    font-size: 1.8rem;
+    line-height: 1.62;
+  }
+}
+
+.contact-links {
+  margin-top: 24px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .contact-page {
+    padding: 24px 20px;
+    min-height: auto;
+    align-items: flex-start;
+  }
+
+  .contact-content {
+    padding: 22px;
+
+    p {
+      font-size: 1.65rem;
+    }
+  }
+
+  .contact-links {
+    flex-direction: column;
+
+    .flat-button {
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-page {
+    padding: 16px 16px 28px;
+  }
+}

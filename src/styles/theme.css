@@ -1,0 +1,48 @@
+/*
+  THEME — every color on the site comes from this file.
+  Change the values below to repaint the whole site.
+  Translucent tints (hover backgrounds, soft borders) are derived
+  automatically from these with color-mix(), so you only edit base colors.
+*/
+
+:root {
+  /* Backgrounds */
+  --color-bg: #fbf6ef;          /* page background — warm off-white / sand */
+  --color-surface: #fffaf4;     /* cards and panels */
+  --color-surface-alt: #f5ebdf; /* inset areas, hovered list items */
+
+  /* Text */
+  --color-text: #3d2c24;        /* headings — warm espresso */
+  --color-text-body: #5c4840;   /* paragraphs */
+  --color-text-muted: #9b8577;  /* kickers, captions, icons */
+
+  /* Lines */
+  --color-border: #e6d5c3;
+
+  /* Sunset accents */
+  --color-accent: #e07a5f;      /* main accent — coral / terracotta */
+  --color-accent-strong: #c8603f; /* button hover, active states */
+  --color-accent-2: #f2a65a;    /* golden hour */
+  --color-accent-3: #d98a94;    /* dusky pink */
+  --color-on-accent: #fffaf4;   /* text that sits on an accent background */
+
+  /* Signature gradient (hero text, loader, placeholders) */
+  --gradient-sunset: linear-gradient(
+    135deg,
+    var(--color-accent-2) 0%,
+    var(--color-accent) 55%,
+    var(--color-accent-3) 100%
+  );
+
+  /* Derived tints — usually no need to edit */
+  --tint-accent-soft: color-mix(in srgb, var(--color-accent) 12%, transparent);
+  --tint-accent-mid: color-mix(in srgb, var(--color-accent) 22%, transparent);
+  --tint-border-accent: color-mix(in srgb, var(--color-accent) 35%, transparent);
+  --nav-bg: color-mix(in srgb, var(--color-bg) 88%, transparent);
+  --shadow-soft: 0 10px 30px color-mix(in srgb, var(--color-text) 8%, transparent);
+
+  /* Fonts (same trio as the dev portfolio) */
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Space Grotesk', sans-serif;
+  --font-accent: 'Marck Script', cursive;
+}

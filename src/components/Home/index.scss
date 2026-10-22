@@ -1,0 +1,133 @@
+.home-page {
+  padding: 32px 36px;
+
+  .home-content {
+    max-width: 1120px;
+    margin: 0 auto;
+    width: 100%;
+    min-height: calc(100dvh - 180px);
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    align-items: center;
+    gap: 56px;
+  }
+
+  .intro-block {
+    min-width: 0;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: clamp(4.2rem, 6.4vw, 7.2rem);
+    line-height: 1.05;
+    color: var(--color-text);
+    font-family: var(--font-heading);
+    font-weight: 700;
+  }
+
+  // Gradient-filled words in the headline
+  .sunset-text .text-animate,
+  .sunset-text .text-animate-hover {
+    background: var(--gradient-sunset);
+    background-size: 1100% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  @for $i from 0 through 10 {
+    .sunset-text span > span:nth-child(#{$i + 1}) {
+      background-position: #{$i * 10%} 0;
+    }
+  }
+
+  .summary {
+    margin: 18px 0 0;
+    max-width: 52ch;
+    color: var(--color-text-body);
+    font-size: 1.9rem;
+    line-height: 1.65;
+  }
+
+  .actions {
+    margin-top: 28px;
+    display: flex;
+    gap: 12px;
+  }
+
+  .featured-panel {
+    padding: 14px;
+    transform: rotate(1.5deg);
+    transition: transform 0.4s ease;
+
+    &:hover {
+      transform: rotate(0deg);
+    }
+  }
+
+  .featured-image {
+    aspect-ratio: 4 / 5;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .featured-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    padding: 12px 4px 2px;
+
+    .featured-title {
+      font-family: var(--font-accent);
+      font-size: 2.2rem;
+      color: var(--color-text);
+    }
+
+    .featured-location {
+      font-size: 1.3rem;
+      color: var(--color-text-muted);
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .home-page {
+    padding: 24px 20px;
+
+    .home-content {
+      grid-template-columns: 1fr;
+      gap: 32px;
+      min-height: auto;
+      justify-items: center;
+    }
+
+    .intro-block,
+    .featured-panel {
+      width: min(100%, 440px);
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .home-page {
+    padding: 8px 16px 28px;
+
+    h1 {
+      font-size: clamp(3.4rem, 12vw, 4.6rem);
+    }
+
+    .summary {
+      font-size: 1.65rem;
+    }
+
+    .actions {
+      flex-direction: column;
+    }
+
+    .flat-button {
+      text-align: center;
+      width: 100%;
+    }
+  }
+}
